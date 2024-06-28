@@ -1,12 +1,55 @@
-﻿<Window x:Class="Thread_async_1.MainWindow"
+﻿<Window x:Class="MultiTaskApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Thread_async_1"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MultiTaskApp" Height="600" Width="800">
     <Grid>
+        <TabControl>
+            <!-- Task 1: Generate Numbers, Letters, and Symbols -->
+            <TabItem Header="Task 1">
+                <StackPanel>
+                    <Button Content="Start Task 1" Click="StartTask1_Click"/>
+                    <TextBox x:Name="OutputTask1TextBox" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                </StackPanel>
+            </TabItem>
 
+            <!-- Task 2: Horse Race Simulation -->
+            <TabItem Header="Task 2">
+                <StackPanel>
+                    <Button Content="Start Horse Race" Click="StartHorseRace_Click"/>
+                    <TextBlock x:Name="HorseRaceResultsTextBlock" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="400"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Task 3: Fibonacci Calculation -->
+            <TabItem Header="Task 3">
+                <StackPanel>
+                    <TextBox x:Name="FibonacciLimitTextBox" Margin="5"/>
+                    <Button Content="Calculate Fibonacci" Click="CalculateFibonacci_Click"/>
+                    <TextBlock x:Name="FibonacciResultTextBlock" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="400"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Task 4: Word Search in File -->
+            <TabItem Header="Task 4">
+                <StackPanel>
+                    <Button Content="Browse File" Click="BrowseFile_Click"/>
+                    <TextBox x:Name="FilePathTextBox" Margin="5"/>
+                    <TextBox x:Name="FileSearchWordTextBox" Margin="5"/>
+                    <Button Content="Search Word in File" Click="SearchWordInFile_Click"/>
+                    <TextBlock x:Name="FileSearchResultTextBlock" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="400"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Task 5: Word Search in Directory -->
+            <TabItem Header="Task 5">
+                <StackPanel>
+                    <Button Content="Browse Directory" Click="BrowseDirectory_Click"/>
+                    <TextBox x:Name="DirectoryPathTextBox" Margin="5"/>
+                    <TextBox x:Name="DirectorySearchWordTextBox" Margin="5"/>
+                    <Button Content="Search Word in Directory" Click="SearchWordInDirectory_Click"/>
+                    <ListBox x:Name="SearchResultsListBox" Height="300" VerticalAlignment="Top"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
